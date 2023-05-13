@@ -23,7 +23,5 @@ Overall, the development of the "MediXTrans" web application demonstrates the po
 <img width="958" alt="<img width="958" alt="login" src="https://github.com/Roshan23R/MediXTrans/assets/82640582/78040950-b4fe-4889-96db-c15f31a1d56b">
 login" src="https:<img width="960" alt="transcript" src="https://github.com/Roshan23R/MediXTrans/assets/82640582/f5c42529-eb5b-48a1-a2b1-e62a5b28ef76">
 <img width="960" alt="landing" src="https://github.com/Roshan23R/MediXTrans/assets/82640582/6751194b-fd7e-4e00-905f-bcf93d7bda00">
-//github.com/Roshan23R/MediXTrans/assets/82640582/726c9007-c119-4ac0-bbe6-751ecd64d166">
 <img width="960" alt="mail" src="https://github.com/Roshan23R/MediXTrans/assets/82640582/ce6bd5a9-fe39-441a-b392-b5d030e8defb">
 <img width="960" alt="analysis" src="https://github.com/Roshan23R/MediXTrans/assets/82640582/db8e368f-863f-4b07-b1c2-b6e0926efc12">
-PNG…]
