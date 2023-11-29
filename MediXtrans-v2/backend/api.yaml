@@ -1,0 +1,190 @@
+openapi: 3.0.0
+info:
+  title: Code Improve API
+  description: Optional multiline or single-line description in [CommonMark](http://commonmark.org/help/) or HTML.
+  version: 1.0
+
+servers:
+  # - url: http://65.2.183.51:8000
+  #   description: Pre Production server
+  - url: http://localhost:8000/
+    description: Local server
+
+components:
+  securitySchemes:
+    ApiTokenss:
+      type: http
+      scheme: bearer
+
+    ApiKey:
+      type: apiKey
+      in: header
+      name: apikey
+
+# API Documentation for User Login
+paths:
+  /api/user/login:
+    post:
+      summary: Authenticate user by email and password
+      tags:
+        - User_API
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+              example:
+                email: "user@example.com"
+                password: "password123"
+      responses:
+        "200":
+          description: User login successful
+          
+        "400":
+          description: Invalid Email or Password
+          
+        "500":
+          description: Internal Server Error
+
+# API Documentation for User Registration
+  /api/user/register:
+    post:
+      summary: Register a new user
+      tags:
+        - User_API
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+                confirmPassword:
+                  type: string
+              example:
+                email: "user@example.com"
+                password: "password123"
+                confirmPassword: "password123"
+      responses:
+        "201":
+          description: User registered successfully
+          
+        "400":
+          description: Bad Request
+          
+        "500":
+          description: Internal Server Error
+
+# API Documentation for User Logout
+  /api/user/logout:
+    get:
+      summary: Logout the currently authenticated user
+      tags:
+        - User_API
+      responses:
+        "200":
+          description: User logged out successfully
+          
+        "500":
+          description: Internal Server Error
+          
+# API Documentation for Generating Text
+  /api/generateText:
+    post:
+      summary: Generate text data for a patient
+      tags:
+        - Text_API
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                patientid:
+                  type: string
+                  description: The ID of the patient for whom text data is generated.
+                text_data:
+                  type: string
+                  description: The text data to be generated.
+              example:
+                patientid: "12345"
+                text_data: "Sample text data for the patient."
+      responses:
+        "201":
+          description: Text data generated successfully
+        "500":
+          description: Internal Server Error
+
+# API Documentation for Getting Text Data
+  /api/getText:
+    get:
+      summary: Get text data
+      tags:
+        - Text_API
+      responses:
+        "200":
+          description: Text data retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    text_id:
+                      type: string
+                      description: The ID of the text data.
+                    text_data:
+                      type: string
+                      description: The text data content.
+                  example:
+                    - text_id: "1"
+                      text_data: "Sample text data 1."
+                    - text_id: "2"
+                      text_data: "Sample text data 2."
+        "404":
+          description: Text data not found
+        "500":
+          description: Internal Server Error
+
+
+# API Documentation for Generating TANS (Text and Numeric Data)
+  /api/generateTans:
+    post:
+      summary: Generate TANS data for a patient
+      tags:
+        - TANS_API
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                patientid:
+                  type: string
+                  description: The ID of the patient for whom TANS data is generated.
+                tans_data:
+                  type: string
+                  description: The TANS data to be generated.
+              example:
+                patientid: "12345"
+                tans_data: "Sample TANS data for the patient."
+      responses:
+        "201":
+          description: TANS data generated successfully
+          
+        "500":
+          description: Internal Server Error
+
